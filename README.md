@@ -1,1 +1,1 @@
-#this file comtains the HTML projects
+#this file contains the HTML projects
