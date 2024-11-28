@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pc Hacked</title>
+  <style>
+    /* Style for the modal background */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #00ff00;
+      overflow: hidden;
+    }
+
+    /* Glitch effect for the body */
+    .glitch {
+      animation: glitch 1.5s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { text-shadow: 2px 0 red; }
+      25% { text-shadow: -2px 0 blue; }
+      50% { text-shadow: 2px 0 lime; }
+      75% { text-shadow: -2px 0 cyan; }
+    }
+
+    /* Modal overlay */
+    .modal-overlay {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      animation: flicker 1s infinite alternate;
+    }
+
+    /* Flickering effect */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.9; }
+      100% { opacity: 1; }
+    }
+
+    /* Modal dialog */
+    .modal {
+      background: #222;
+      border: 1px solid #00ff00;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 20px #00ff00;
+      color: #00ff00;
+      width: 300px;
+    }
+
+    /* Buttons */
+    .modal button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: none;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .modal button:hover {
+      background: #00ff00;
+      color: #000;
+    }
+  </style>
+</head>
+<body class="glitch">
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <p>Are you a fool?</p>
+    <button onclick="respond(true)">Yes</button>
+    <button onclick="respond(false)">No</button>
+  </div>
+</div>
+
+<script>
+  // Show the modal
+  function showModal() {
+    document.getElementById("modalOverlay").style.display = "flex";
+  }
+
+  // Handle the response
+  function respond(answer) {
+    if (answer) {
+      document.getElementById("modalOverlay").style.display = "none";
+      setTimeout(() => alert("Haha, I knew it fool!"), 500);
+    } else {
+      showModal();
+    }
+  }
+
+  // Show the modal when the page loads
+  window.onload = showModal;
+</script>
+
+</body>
+</html>
