@@ -1,0 +1,80 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    max-width: 100%;
+    margin: 5px;
+    text-align: right;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+}
+/* Title and Description */
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    align-items: left;
+    display: flex;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    align-content: right;
+    
+}
+
+
+
+nav {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+background-color: rgb(21, 188, 71);   
+}
+
+nav ul{
+display: flex;
+list-style: none;
+padding: 5;
+text-align: right;
+}
+nav ul li{
+margin: 10px 20px;
+text-align: right;
+}
+
+
+.section-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Form Styling */
+.data-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
