@@ -9,27 +9,29 @@
 /* Section Styling */
 section {
     padding: 60px 20px;
-    max-width: 100%;
-    margin: 5px;
-    text-align: right;
+    max-width:100%;
+    margin: 10px;
+    text-align: center;
     color: #333;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
     
 }
-section p {
+/*section p {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 20px;
     text-align: left;
-}
+}*/
 /* Title and Description */
 h2 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 10px;
     align-items: left;
-    display: flex;
+
 }
 body {
     font-family: Arial, sans-serif;
@@ -44,8 +46,9 @@ body {
 nav {
 display: flex;
 justify-content: space-between;
-padding: 10px 0;
-background-color: rgb(21, 188, 71);   
+padding: 10px;
+background-color: rgb(21, 188, 71); 
+width: 100%;  
 }
 
 nav ul{
@@ -59,6 +62,17 @@ margin: 10px 20px;
 text-align: right;
 }
 
+.topic p {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.topic {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
 
 .section-description {
     font-size: 1.2em;
@@ -72,9 +86,86 @@ text-align: right;
     flex-direction: column;
     gap: 15px;
 }
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color:rgb(21, 188, 71);
+    border-top: 1px solid #ccc;
+    text-align: center;
+    color: #666;
+}
 
 label {
     text-align: left;
     font-weight: bold;
     color: #555;
 }
+.map-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-top: 20px;
+    margin-left: 250px;
+    text-align: center
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+.crop-stats {
+	white-space: nowrap;
+	max-height: 400px;
+	overflow: hidden;
+	text-align: center;
+    margin-top: 250px;
+    
+	
+}
+
+.crop-group {
+	cursor: pointer;
+	max-width: 450px;
+	height: 350px;
+	margin: 10px;
+	display: inline-block;
+    
+}
+
+.bar {
+	background-color: #00ff2a;
+	width: 30px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.crop-group:hover .bar,
+.selected .bar {
+	background: #67ff71;
+}
+
+.crop-group:hover p,
+.selected p {
+	color: #00ff6a;
+}
+
+.h-25 {
+	height: 30%;
+}
+.h-50 {
+	height: 50%;
+}
+.h-75 {
+	height: 75%;
+}
+.h-100 {
+	height: 100%;
+}
+

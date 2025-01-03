@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgMe - View Data by District</title>
     <link rel="stylesheet" href="view-data.css">
+    
 </head>
 <body>
     <div class="hero">
@@ -18,10 +19,38 @@
         </nav>
     </div>
     <!-- View Data Section -->
-    <section class="view-data">
+     <div class="topic">
         <h2>View Crop Data by District</h2>
         <p class="section-description">Click on a district to view data for that area.</p>
 
+     </div>
+    <section class="view-data">
+        <div class="main-container">
+            <div class="crop-stats">
+                <p><i>2025 harvest data</i></p>
+                <div class="crop-group">
+                    <div id="1" class="bar h-100"></div>
+                    <p class="crop">crop1</p>
+                </div>
+                <div class="crop-group">
+                    <div id="2" class="bar h-50"></div>
+                    <p class="crop">crop2</p>
+                </div>
+                <div class="crop-group">
+                    <div id="3" class="bar h-75"></div>
+                    <p class="crop">crop3</p>
+                </div>
+                <div class="crop-group">
+                    <div id="4" class="bar h-25"></div>
+                    <p class="crop">crop4</p>
+                </div>
+                <div class="crop-group">
+                    <div id="5" class="bar h-50"></div>
+                    <p class="crop">crop5</p>
+                </div>
+                
+            </div>
+        </div>
         <!-- Sri Lanka Map SVG with Districts -->
         <div class="map-container">
           <svg height="682.0440391726996" version="1.1" width="377.475" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: relative; left: -0.597198px; top: -0.587509px;" viewBox="0 0 332.068 600" preserveAspectRatio="xMinYMin">
@@ -50,46 +79,19 @@
             <path fill="#00e64d" stroke="#ffffff" d="M130.597,409.419L129.78,411.477L124.766,413.275V413.282L119.543,415.15799999999996L115.459,416.79499999999996L111.96000000000001,418.21899999999994L113.209,419.26899999999995V419.26399999999995L114.64200000000001,420.47499999999997L117.501,427.03299999999996L118.727,431.12199999999996L111.774,437.66099999999994V441.7579999999999L113.226,447.42999999999995L117.042,451.79599999999994L120.822,455.26199999999994L120.886,458.1909999999999L120.777,464.90199999999993C120.519,464.50299999999993,120.355,464.25299999999993,120.355,464.25299999999993S115.85900000000001,462.61499999999995,111.361,461.7969999999999C106.869,460.9759999999999,98.678,460.9759999999999,98.678,460.9759999999999L90.89999999999999,459.3389999999999C90.89999999999999,459.3389999999999,85.582,453.19099999999986,84.35999999999999,451.95999999999987C83.40299999999999,451.0029999999999,79.17499999999998,449.03999999999985,77.39099999999999,448.22499999999985L76.02099999999999,442.7959999999999H76.01599999999999L75.767,441.80199999999985L74.524,439.5649999999998L68.806,438.45899999999983L68.461,437.5509999999998L70.199,436.8859999999998L70.089,436.6149999999998L70.761,431.1319999999998L68.61999999999999,423.9649999999998L71.151,419.30999999999983L73.303,418.4089999999998H73.307L68.401,412.26899999999983L71.67399999999999,406.9479999999998L73.312,403.2659999999998L76.175,395.4899999999998L87.964,391.25999999999976L92.139,389.76799999999974C92.139,389.76799999999974,93.36,388.8459999999997,94.694,387.71899999999977C96.019,386.59699999999975,97.453,385.2659999999998,97.857,384.44999999999976C98.27,383.6369999999998,99.907,381.58199999999977,101.442,379.74399999999974C102.97099999999999,377.8939999999997,104.39999999999999,376.25799999999975,104.39999999999999,376.25799999999975L107.43599999999999,377.7859999999998L111.56099999999999,382.1769999999998L113.14999999999999,383.8809999999998L116.071,388.2869999999998L117.437,388.7119999999998H117.442L120.77699999999999,389.7549999999998L125.28299999999999,398.7579999999998L125.692,402.0289999999998L130.597,409.419Z" stroke-opacity="0.8" stroke-width="1" stroke-linejoin="round" data-id="Kegalle" data-type="area" class="area" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round; cursor: pointer;"></path>
          </svg>
         </div>
-</section>
+      
 
-
-<style>
-    .tooltip {
-        position: absolute;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        padding: 5px;
-        display: none;
-        z-index: 1000;
-    }
-</style>
-
+    </section>
+<!--tooltip and area click-->
 <div id="tooltip" class="tooltip"></div>
+<script src="script.js"></script>
 
-<script>
-    const tooltip = document.getElementById('tooltip');
 
-    document.querySelectorAll('.area').forEach(function(area) {
-        area.addEventListener('mouseover', function(event) {
-            tooltip.innerHTML = area.getAttribute('data-id');
-            tooltip.style.display = 'block';
-            tooltip.style.left = event.pageX + 'px';
-            tooltip.style.top = (event.pageY - 30) + 'px'; // Adjusted to display above the path area
-        });
-
-        area.addEventListener('mousemove', function(event) {
-            tooltip.style.left = event.pageX + 'px';
-            tooltip.style.top = (event.pageY - 30) + 'px'; // Adjusted to display above the path area
-        });
-
-        area.addEventListener('mouseout', function() {
-            tooltip.style.display = 'none';
-        });
-
-        area.addEventListener('click', function() {
-            window.location.href = 'new.html';
-        });
-    });
-</script>
+</div>
 </body>
+<footer>
+    <div class="footer">
+        <p>© 2025 All rights reserved.</p>
+    </div>
+</footer>
 </html>
