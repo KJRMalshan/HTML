@@ -18,6 +18,7 @@ document.querySelectorAll('.area').forEach(function(area) {
     });
 
     area.addEventListener('click', function() {
-        window.location.href = 'new.html';
+        window.location.href = 'graph-main.html';
     });
 });
+
